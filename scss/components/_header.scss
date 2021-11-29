@@ -101,7 +101,12 @@ a {
         }
 
       
-    
+        input[type=checkbox]{
+            display: none;
+            appearance: none;
+            -webkit-appearance: none;
+        } 
+        
         input[type=checkbox]:checked ~ label ~ .dropdown{
             visibility: visible;
             top: 80px;
