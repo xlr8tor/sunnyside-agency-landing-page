@@ -1,0 +1,251 @@
+@import '_variables';
+@import '_mixins.scss';
+@import '_reset';
+@import '_layout';
+@import '_util';
+@import 'components/header';
+
+section {
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.landing-page {
+    position: relative;
+    background-image: url('../images/desktop/image-header.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    padding: 1em;
+    height: 100vh;
+    
+   
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 6px;
+        word-spacing: .2ch;
+        margin-block-start: 2em;
+        color: $White;
+    }
+
+    .down-arrow {
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        @include screen-tablet-sm-2{
+            display: none;
+        }
+    }
+
+    @include screen-tablet-sm-2{
+        background-image: url('../images/mobile/image-header.jpg');
+    }
+}
+
+.gallery,
+.two-cols {
+    & img {
+        width: 100%;
+    }
+}
+
+.section-content {
+    padding: 6em;
+
+    @include screen-tablet-sm-2 {
+        padding: 4em 1em;
+    }
+
+}
+
+.graphic-design {
+    background: url('./../images/desktop/image-graphic-design.jpg') center no-repeat;
+}
+
+.photography {
+    background: url('./../images/desktop/image-photography.jpg') center no-repeat;
+}
+
+.graphic-design,
+.photography {
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    height: 40rem;
+    padding: 4rem 1rem;
+    text-align: center;
+    
+
+    @at-root .graphic-design {
+        @include apply-color($Dark-desaturated-cyan);
+    }
+
+    @at-root .photography {
+        @include apply-color($Dark-blue);
+    }
+
+    &__text {
+        margin: 0 auto;
+        width: 55%;
+    }
+
+    @include screen-laptop-sm {
+        & {
+            height: 35rem;
+            padding: 4em 1em;
+        }
+
+        &__text {
+            width: 100%;
+            line-height: 1.4;
+        }
+
+    }
+}
+
+.transform-brand,
+.stand-out {
+    background-color: $White;
+
+    &__header {
+
+        &.text--color {
+            @include apply-color($Very-dark-desaturated-blue);
+        }
+    }
+
+    .learn {
+        @include apply-color($Very-dark-desaturated-blue);
+        font-family: 'Fraunces', serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        border-bottom: 2px solid $Yellow;
+    }
+
+    p {
+        @include apply-color($Dark-grayish-blue);
+        margin-block: 2em;
+    }
+
+    .egg,
+    .glass {
+        object-fit: cover;
+    }
+    
+    @include screen-tablet-lg {
+        text-align: center;
+    }
+}
+
+.testimonials {
+    background-color: $White;
+    max-width: 1600px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 6em;
+
+    &__profile {
+        margin-inline: 1em; 
+    }
+    &__header {
+        @include apply-color($Grayish-blue);
+        font-size: clamp(1rem, 2vw, 6rem);
+        text-transform: uppercase;
+    }
+
+    &__img {
+        width: 60px;
+        border-radius: 50%;
+        padding-block: 3em;
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+
+        &.text--color {
+            @include apply-color($Very-dark-grayish-blue);
+        }
+    }
+
+    &__name {
+        font-family: 'Fraunces', serif;
+        font-weight: 900;
+        margin-block-start: 3em;
+
+        &.text--color {
+            @include apply-color($Very-dark-desaturated-blue);
+        }
+    }
+
+    &__designation {
+        font-size: 14px;
+        margin-block-start: .7em;
+
+        &.text--color {
+            @include apply-color($Grayish-blue);
+        }
+    }
+
+    @include screen-phone {
+        & {
+            padding: 4em 1em;
+        }
+    }
+}
+
+
+.footer {
+    background-color: $footer;
+    align-items: center;
+    justify-content: center;
+    padding-block: 4em;
+
+    .logo {
+        font-weight: 900;
+    }
+
+    .logo--green {
+        filter: invert(28%) sepia(46%) saturate(440%) hue-rotate(116deg) brightness(39%) contrast(93%);
+    }
+
+    &__list {
+        padding-block: 1em;
+
+        .footer__item {
+            font-size: 14px;
+            padding-inline: 1.5em;
+        }
+
+        .footer__link {
+            color: $Dark-moderate-cyan;
+
+        }
+    }
+
+    &__icon-list {
+        padding-block-start: 2em;
+
+        .footer__icon-link {
+            padding-inline-start: 1em;
+            
+            
+
+            & img {
+                transform: scale(80%);
+
+                &:hover {
+                    fill: $White;
+                    background-color: $White;
+                }
+            }
+
+        }
+    }
+
+}

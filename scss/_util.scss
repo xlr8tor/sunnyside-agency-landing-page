@@ -1,0 +1,40 @@
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.column {
+    flex-flow: column nowrap;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.col {
+    width: 50%;
+
+    @include screen-tablet-lg {
+        width: 100%;
+    }
+}
+
+.btn {
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    font-size: .8rem;
+    padding: 1em 2.25em;
+    border-radius: 2em;
+}
+
+.btn-primary {
+    background-color: $White;
+    color: $Very-dark-desaturated-blue;
+}
+
+.btn-secondary {
+    background-color: $Yellow;
+    color: $Very-dark-desaturated-blue;
+
+    
+}

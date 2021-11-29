@@ -1,0 +1,34 @@
+@mixin apply-color($color){
+    color: $color;
+}
+
+@mixin screen-laptop-sm {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin screen-tablet-lg {
+    @media (max-width: 800px){
+        @content;
+    }
+}
+
+@mixin screen-tablet {
+    @media (max-width: 768px){
+        @content;
+    }
+}
+
+
+@mixin screen-tablet-sm-2 {
+    @media (max-width: 600px){
+        @content;
+    }
+}
+
+@mixin screen-phone {
+    @media (max-width: 425px){
+        @content;
+    }
+}

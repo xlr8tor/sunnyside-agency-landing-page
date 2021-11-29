@@ -1,0 +1,97 @@
+@import '_mixins';
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+
+    
+
+    .landing-page,
+    .transform-brand,
+    .stand-out,
+    .two-cols,
+    .testimonials,
+    .gallery,
+    .footer {
+        grid-column: span 3;
+        width: 100%;
+    }
+
+
+    .stand-out,
+    .transform-brand {
+        @include screen-tablet-lg {
+            flex-flow: column-reverse nowrap;
+
+            .egg {
+                content: url("../images/mobile/image-transform.jpg");
+            }
+            .glass {
+                content: url("../images/mobile/image-stand-out.jpg");
+
+            }
+        }
+    }
+   
+
+    .two-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include screen-tablet {
+            grid-template-columns: 1fr;
+        }
+
+        @include screen-phone {
+            .photography {
+                background: url('./../images/mobile/image-photography.jpg') center no-repeat;
+                background-size: cover;
+            }
+
+            .graphic-design {
+                background: url('./../images/mobile/image-graphic-design.jpg') center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+    
+
+    .testimonials__wrap {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+
+        @include screen-tablet-lg {
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+
+        @include screen-tablet {
+            grid-template-columns: repeat(2,1fr);
+
+            &-img__milk {
+                content: url("../images/mobile/image-gallery-milkbottles.jpg");
+            }
+
+            &-img__orange {
+                content: url("../images/mobile/image-gallery-orange.jpg");
+            }
+
+            &-img__icecream {
+                content: url("../images/mobile/image-gallery-cone.jpg");
+            }
+
+            &-img__sugar {
+                content: url("../images/mobile/image-gallery-sugar-cubes.jpg");
+            }
+        }
+    }
+
+}
+

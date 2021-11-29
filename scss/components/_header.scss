@@ -1,0 +1,118 @@
+@import '../variables';
+@import '../mixins';
+@import '../util';
+
+
+a {
+    color: $Dark-grayish-blue;
+}
+
+.header {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+
+    .hamburger {
+        display: none;
+    }
+
+    .dropdown {
+        visibility: hidden;
+        // display: none;
+        background-color: $White;
+        position: absolute;
+        text-align: center;
+        z-index: 10;
+        width: 100%;
+        max-width: 400px;
+        top: 0px;
+        left: 0;
+        right: 0;
+        padding: 2em;
+        margin: 0 auto;
+        opacity: 0;
+        transition: .3s ease-in;
+
+        &::after {
+            background-color: transparent;
+            content: '';
+            position: absolute;
+            border-bottom: 70px solid $White;
+            border-left: 0px solid transparent;
+            border-right: 40px solid transparent;
+            transform: rotate(270deg);
+            top: -40px;
+            right: 15px;
+        }
+
+        &__list {
+            transition: 3s ease-in;
+
+            &-item {
+                width: 100%;
+            }
+
+            &-item:nth-child(1) {
+                padding-block-end: .725em;
+            }
+
+            &-item:not(:nth-child(1)) {
+                padding-block: .725em;
+            }
+        }
+
+    }
+
+    &__list {
+        list-style: none;
+        
+        &-item + &-item {
+            margin-inline-start: 1.5em;
+        }
+
+        &-link {
+            text-decoration: none;
+            color: $White;
+
+            &.btn-primary {
+                color: $Very-dark-desaturated-blue;
+
+                &:hover {
+                    color: $White;
+                    background-color: rgba($White,.3);
+                }
+            }
+        }
+    }
+
+    input[type=checkbox]{
+        appearance: none;
+        -webkit-appearance: none;
+    } 
+
+    @include screen-tablet-sm-2 {
+        &__list {
+            display: none
+        }
+
+        .hamburger {
+            display: inline-block;
+        }
+
+      
+    
+        input[type=checkbox]:checked ~ label ~ .dropdown{
+            visibility: visible;
+            top: 80px;
+            opacity: 1;
+            transition: .3s ease-in;
+        }
+    }
+
+   
+
+}
+
+
+
+
